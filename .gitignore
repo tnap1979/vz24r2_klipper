@@ -1,0 +1,16 @@
+/moonraker-obico.cfg
+/moonraker.conf
+/timelapse
+/telegram.conf
+/test.cfg
+/imgs
+*.zip
+*.bkp
+
+*.log
+.variables.stb
+printer-*.cfg
+*.csv
+/logs
+*.txt
+.moonraker.conf.bkp
