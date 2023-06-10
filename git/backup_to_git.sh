@@ -12,6 +12,7 @@ grab_version(){
 }
 
 push_config(){
+  git push -f origin master
   cd $config_folder
   git pull
   git add .
