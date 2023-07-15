@@ -12,6 +12,5 @@
 printer-*.cfg
 *.csv
 /logs
-*.txt
 .moonraker.conf.bkp
 .tar.gz
