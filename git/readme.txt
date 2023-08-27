@@ -11,7 +11,7 @@ git config --global user.name "<Your Name>"
 git config --global user.email "<Your email>"
 
 cd ~/printer_data
-cd ~/config
+cd config
 git init
 git add .
 git commit -m "First commit"
@@ -20,7 +20,6 @@ git remote -v
 git push --set-upstream origin master
 
 4. If you browse to your Github repo, you should see the backup.
-
 
 
 Setup the macro:
@@ -36,7 +35,7 @@ Setup the macro:
 
 5. Restart the macro. You should now have a working "BACKUP_CFG" macro
 
-
+#################################################################################
 
 Cloning our config from the repo to the pi (Fresh OS Instalation)
 
@@ -53,3 +52,20 @@ git config --global user.email "<Your email>"
     B - Execute "mv config configold" (To move your actual config folder to another)
 4 - git clone <your backup github url> config
 5 - Now "cd config" then "ls -l" and you should see everything
+
+
+#################################################################################
+This post documents how we can fix the problem of loose object is corrupt in git.
+
+I run a Ubuntu guest system as a virtual machine in a Windows host with VirtualBox. Sometimes, especially when the machine is shutdown abruptly, a git directory will be damaged, showing the following error messages:
+
+error: object file .git/objects/e1/ref is empty
+error: object file .git/objects/e1/ref is empty
+fatal: loose object e1ref (stored in .git/objects/e1/ref) is corrupt
+
+The solution is:
+
+find .git/objects/ -size 0 -exec rm -f {} \;
+git fetch origin
+
+Then run git status, the repo should be functional again.
