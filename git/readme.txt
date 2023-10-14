@@ -26,9 +26,12 @@ Setup the macro:
 
 1. Create a new folder called "git" in ~/printer_data/config/ (you can do this through Fluidd or Mainsail)
 
-2. Upload backup_to_git_macro.cfg and backup_to_git.sh tp this new folder
+2. Upload backup_to_git_macro.cfg and backup_to_git.sh tp this new folder using these below links in SSH client
+    wget -O /home/pi/printer_data/config/git/backup_to_git_macro.cfg https://github.com/emebecnc/vz24r2_klipper/blob/master/git/backup_to_git_macro.cfg
+    wget -O /home/pi/printer_data/config/git/backup_to_git.sh https://github.com/emebecnc/vz24r2_klipper/blob/master/git/backup_to_git.sh
 
-3. SSH into the Pi and install "Shell Command" through Kiauh (Options: 4 then 9). When prompted to install the sample macro, just say No.
+3. SSH into the Pi and install "Shell Command" using this command in SSH client
+     wget -O /home/pi/klipper/klippy/extras/gcode_shell_command.py https://raw.githubusercontent.com/th33xitus/kiauh/master/resources/gcode_shell_command.py
 
 4. Edit printer.cfg and add this line near the top:
 [include git/*.cfg]
